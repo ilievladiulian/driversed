@@ -1,0 +1,44 @@
+<?xml-stylesheet type="text/xsl" href="scoalasoferi.xsl"?>
+<!DOCTYPE scoalaSoferi SYSTEM "scoalasoferi.dtd">
+<scoalaSoferi>
+	<studenti>
+		<student>
+			<nume>Ilie Vlad</nume>
+			<numarTelefon>0725219324</numarTelefon>
+			<sex>M</sex>
+			<varsta>21</varsta>
+			<adresa>Bucuresti, Splaiul Independentei</adresa>
+			<dataInscriere>2013-05-07</dataInscriere>
+			<categorie>B</categorie>
+		</student>
+		<student>
+			<nume>Ionescu Viorel</nume>
+			<numarTelefon>2543123412</numarTelefon>
+			<sex>M</sex>
+			<varsta>32</varsta>
+			<adresa>ala bala portocala</adresa>
+			<dataInscriere>2015-04-22</dataInscriere>
+			<categorie>B</categorie>
+		</student>
+	</studenti>
+	<instructori>
+		<instructor>
+			<nume>Popescu Constantin</nume>
+			<numarTelefon>1423432211</numarTelefon>
+			<sex>M</sex>
+			<varsta>44</varsta>
+			<adresa>cine mi-a mancat sarmala</adresa>
+			<masina>
+				<model>Opel Astra</model>
+				<anFabricatie>2010</anFabricatie>
+				<culoare>Negru</culoare>
+				<tip>Benzina</tip>
+			</masina>
+			<categorie>B</categorie>
+		</instructor>
+	</instructori>
+	<informatie>
+		<nume>ABC Auto</nume>
+		<dataDeschidere>2001-03-12</dataDeschidere>
+	</informatie>
+</scoalaSoferi>

@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:complexType name="scoalaSoferi">
+		<xs:sequence>
+			<xs:element name="informatie" type="informatie"/>
+			<xs:element name="studenti" type="studenti"/>
+			<xs:element name="instructori" type="instructori"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="studenti">
+		<xs:sequence>
+			<xs:element name="student" type="student" maxOccurs="unbounded" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="instructori">
+		<xs:sequence>
+			<xs:element name="instructor" type="instructor" maxOccurs="unbounded" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="informatie">
+		<xs:sequence>
+			<xs:element name="nume" type="xs:string"/>
+			<xs:element name="dataDeschidere" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="infoPersoana">
+		<xs:sequence>
+			<xs:element name="nume" type="xs:string"/>
+			<xs:element name="numarTelefon" type="numarTelefon"/>
+			<xs:element name="sex" type="sex"/>
+			<xs:element name="varsta" type="varsta"/>
+			<xs:element name="adresa" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="masina">
+		<xs:sequence>
+			<xs:element name="model" type="xs:string"/>
+			<xs:element name="culoare" type="xs:string"/>
+			<xs:element name="anFabricatie" type="xs:string"/>
+			<xs:element name="tip" type="tip"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="examen">
+		<xs:sequence>
+			<xs:element name="data" type="xs:string"/>
+			<xs:element name="nota" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="student">
+		<xs:complexContent>
+			<xs:extension base="infoPersoana">
+				<xs:sequence>
+					<xs:element name="examen" type="examen" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="dataInscriere" type="xs:string"/>
+					<xs:element name="categorie" type="categorie"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="instructor">
+		<xs:complexContent>
+			<xs:extension base="infoPersoana">
+				<xs:sequence>
+					<xs:element name="categorie" type="categorie"/>
+					<xs:element name="masina" type="masina"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:simpleType name="categorie">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="A"/>
+			<xs:enumeration value="B"/>
+			<xs:enumeration value="C"/>
+			<xs:enumeration value="D"/>
+			<xs:enumeration value="E"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="tip">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Benzina"/>
+			<xs:enumeration value="Motorina"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="varsta">
+		<xs:restriction base="xs:integer">
+			<xs:minExclusive value="17"></xs:minExclusive>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="sex">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="M"/>
+			<xs:enumeration value="F"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="numarTelefon">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="10"/>
+			<xs:maxLength value="12"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="anFabricatie">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="2000"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
