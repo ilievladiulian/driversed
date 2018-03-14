@@ -1,8 +1,7 @@
-<!ELEMENT scoalaSoferi (studenti, instructori, informatie)>
+<!ELEMENT scoalaSoferi (studenti, informatie)>
 <!ELEMENT studenti (student*)>
-<!ELEMENT instructori (instructor*)>
-<!ELEMENT student (nume, numarTelefon, sex, varsta, adresa, examen*, dataInscriere, categorie+)>
-<!ELEMENT instructor (nume, numarTelefon, sex, varsta, adresa, masina, categorie+)>
+<!ELEMENT student (nume, numarTelefon, sex, varsta, adresa, examen*, dataInscriere, categorie+, instructor)>
+<!ELEMENT instructor (nume, numarTelefon, sex, varsta, adresa, masina)>
 <!ELEMENT informatie (nume, dataDeschidere)>
 <!ELEMENT examen (dataExamen, nota)>
 <!ELEMENT masina (model, anFabricatie, culoare, tip)>

@@ -5,19 +5,12 @@
 		<xs:sequence>
 			<xs:element name="informatie" type="informatie"/>
 			<xs:element name="studenti" type="studenti"/>
-			<xs:element name="instructori" type="instructori"/>
 		</xs:sequence>
 	</xs:complexType>
 
 	<xs:complexType name="studenti">
 		<xs:sequence>
 			<xs:element name="student" type="student" maxOccurs="unbounded" minOccurs="0"/>
-		</xs:sequence>
-	</xs:complexType>
-
-	<xs:complexType name="instructori">
-		<xs:sequence>
-			<xs:element name="instructor" type="instructor" maxOccurs="unbounded" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 
@@ -61,6 +54,7 @@
 					<xs:element name="examen" type="examen" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element name="dataInscriere" type="xs:string"/>
 					<xs:element name="categorie" type="categorie"/>
+					<xs:element name="instructor" type="instructor"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
