@@ -32,6 +32,6 @@ public class AppController {
 	@RequestMapping(value = "/parse", method = RequestMethod.GET)
 	public String parseXMLFile(@RequestParam(name = "file") String fileName, Model model) {
 		this.appService.parseXMLFile(fileName, model);
-		return "parsedFile";
+		return "uploadForm";
 	}
 }
