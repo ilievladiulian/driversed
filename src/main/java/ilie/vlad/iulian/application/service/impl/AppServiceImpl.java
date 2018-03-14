@@ -46,10 +46,11 @@ public class AppServiceImpl implements AppService {
 		try {
 			ScoalaSoferi scoalaSoferi = this.xmlParser.parseXMLResource(fileName);
 			model.addAttribute("studenti", scoalaSoferi.getStudenti());
+			model.addAttribute("studenti", scoalaSoferi.getInformatie());
+			model.addAttribute("fileName", fileName);
 		} catch (Exception exception) {
 			exception.printStackTrace();
 			System.out.println("Error parsing xml file");
-
 		}
 	}
 }

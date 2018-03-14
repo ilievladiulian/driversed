@@ -19,12 +19,12 @@ public class AppController {
 		return this.appService.getResource(Constants.XML_RESOURCE_NAME);
 	}
 
-	@RequestMapping(value = Constants.DTD_RESOURCE_NAME,  method = RequestMethod.GET, produces = {MediaType.APPLICATION_ATOM_XML_VALUE})
+	@RequestMapping(value = Constants.DTD_RESOURCE_NAME, method = RequestMethod.GET, produces = {MediaType.APPLICATION_ATOM_XML_VALUE})
 	public HttpEntity<byte[]> getDTD() {
 		return this.appService.getResource(Constants.DTD_RESOURCE_NAME);
 	}
 
-	@RequestMapping(value = Constants.XSL_RESOURCE_NAME,  method = RequestMethod.GET, produces = {MediaType.APPLICATION_ATOM_XML_VALUE})
+	@RequestMapping(value = Constants.XSL_RESOURCE_NAME, method = RequestMethod.GET, produces = {MediaType.APPLICATION_ATOM_XML_VALUE})
 	public HttpEntity<byte[]> getXSL() {
 		return this.appService.getResource(Constants.XSL_RESOURCE_NAME);
 	}
@@ -32,6 +32,6 @@ public class AppController {
 	@RequestMapping(value = "/parse", method = RequestMethod.GET)
 	public String parseXMLFile(@RequestParam(name = "file") String fileName, Model model) {
 		this.appService.parseXMLFile(fileName, model);
-		return "parsed";
+		return "parsedFile";
 	}
 }

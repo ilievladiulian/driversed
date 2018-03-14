@@ -16,14 +16,13 @@ public class CacheInitializer {
 	public void init() {
 		ScoalaSoferi scoalaSoferi = null;
 		try {
-			// scoalaSoferi = this.xmlParser.parseXMLResource();
+			scoalaSoferi = this.xmlParser.parseXMLResource("scoalasoferi.xml");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		if (scoalaSoferi != null) {
 			Cache.studentList = scoalaSoferi.getStudenti().getStudent();
 			Cache.informatie = scoalaSoferi.getInformatie();
-			Cache.instructorList = scoalaSoferi.getInstructori().getInstructor();
 		}
 	}
 }

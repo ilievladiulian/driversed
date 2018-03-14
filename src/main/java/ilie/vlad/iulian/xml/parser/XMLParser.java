@@ -3,12 +3,20 @@ package ilie.vlad.iulian.xml.parser;
 import ilie.vlad.iulian.generated.ObjectFactory;
 import ilie.vlad.iulian.generated.ScoalaSoferi;
 import org.springframework.stereotype.Service;
+import org.xml.sax.EntityResolver;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
+import org.xml.sax.XMLReader;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
+import javax.xml.parsers.SAXParserFactory;
+import javax.xml.transform.sax.SAXSource;
+import java.io.IOException;
 
 @Service
 public class XMLParser {
+	private static final String RESOURCE_PATH = "xml/";
 
 	public ScoalaSoferi parseXMLResource(String fileName) throws Exception{
 		//1. We need to create JAXContext instance
@@ -18,11 +26,20 @@ public class XMLParser {
 		Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
 		System.setProperty("javax.xml.accessExternalDTD", "all");
 
-		//3. Use the Unmarshaller to unmarshal the XML document to get an instance of JAXBElement.
-		ScoalaSoferi unmarshalledObject = (ScoalaSoferi) unmarshaller.unmarshal(ClassLoader.getSystemResourceAsStream(fileName));
+		final SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
+		final XMLReader reader = saxParserFactory.newSAXParser().getXMLReader();
+		reader.setEntityResolver(new EntityResolver() {
 
-		//4. Get the instance of the required JAXB Root Class from the JAXBElement.
-		return unmarshalledObject;
+			@Override
+			public InputSource resolveEntity(final String publicId, final String systemId) throws SAXException, IOException {
+
+				return new InputSource(ClassLoader.getSystemResourceAsStream("xml/scoalasoferi.dtd"));
+			}
+		});
+		final SAXSource saxSource = new SAXSource(reader, new InputSource(ClassLoader.getSystemResourceAsStream(RESOURCE_PATH + fileName)));
+
+		//3. Use the Unmarshaller to unmarshal the XML document to get an instance of JAXBElement.
+		return (ScoalaSoferi) unmarshaller.unmarshal(saxSource);
 	}
 
 }

@@ -9,5 +9,4 @@ import java.util.List;
 public class Cache {
 	public static Informatie informatie;
 	public static List<Student> studentList;
-	public static List<Instructor> instructorList;
 }
