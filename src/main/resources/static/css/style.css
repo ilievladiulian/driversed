@@ -1,0 +1,131 @@
+body {
+    margin: 0;
+    position: relative;
+}
+
+#background {
+    background-image: url("https://quotefancy.com/media/wallpaper/3840x2160/1222658-Erik-Naggum-Quote-XML-is-a-giant-step-in-no-direction-at-all.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width:100%;
+    position:fixed;
+    top:0;
+    z-index:0;
+    height: 100%;
+}
+
+#page {
+    position: absolute;
+    background-color: #000000;
+    opacity: 0.8;
+    z-index: 1;
+    top: 180px;
+    width: 80%;
+    right: 10%;
+    height: 600px;
+    border-radius: 50px;
+}
+
+#page-title {
+    padding-top: 20px;
+    color: #ffffff;
+    font-size: 50px;
+    width:100%;
+    text-align: center;
+}
+
+.action-button {
+    width: 40%;
+    display: block;
+    float: left;
+    margin: 10% 5%;
+    background-color: #11D269;
+    height: 100px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 25px;
+    -webkit-box-shadow: inset 0px 0px 77px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px 0px 77px -1px rgba(0,0,0,0.75);
+    box-shadow: inset 0px 0px 77px -10px rgba(0,0,0,0.75);
+}
+
+.action-button:hover {
+    background-color: #35EC88;
+    cursor: pointer;
+}
+
+#submit-button {
+    padding: 0;
+    border: none;
+}
+
+.input-file {
+    height: 250px;
+    float: left;
+    margin: 6% 5%;
+    width: 40%;
+    background-color: white;
+    position: relative;
+}
+
+.input-file input {
+    position: absolute;
+    width: 80%;
+    top: 35%;
+    text-align: center !important;
+    font-size: 40px;
+    left: 10%;
+}
+
+.files {
+    height: 150px;
+    width: 100%;
+}
+
+.file {
+    height: 150px;
+    width: 20%;
+    float: left;
+    margin: 0 2.5%;
+    text-align: center;
+    color: #ffffff;
+    font-size: 30px;
+    line-height: 150px;
+    cursor: pointer;
+}
+
+.info-student {
+    color: #ffffff;
+    display: inline-block;
+    width: 12%;
+    text-align: center;
+}
+
+.adresa {
+    width: 25%;
+}
+
+.header-row {
+    background-color: #35EC88;
+}
+
+.row {
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.header-row .info-student {
+    color: #000000;
+    font-size: 25px;
+}
+
+.clear {
+    clear: both;
+}

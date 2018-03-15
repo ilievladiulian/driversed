@@ -16,7 +16,7 @@ import java.io.IOException;
 
 @Service
 public class XMLParser {
-	private static final String RESOURCE_PATH = "xml/";
+	private static final String RESOURCE_PATH = "xml/uploaded/";
 
 	public ScoalaSoferi parseXMLResource(String fileName) throws Exception{
 		//1. We need to create JAXContext instance

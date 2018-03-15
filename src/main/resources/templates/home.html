@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>XML Viewer</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" th:src="@{js/functions.js}"></script>
+</head>
+<body>
+	<div id="background"></div>
+	<div id="page">
+		<div id="page-title" th:text="${message}"></div>
+		<div id="page-content">
+			<div class="files" th:if="${files != null}">
+				<th:block th:each="file : ${files}">
+					<div class="file" th:text="${file}" onclick="getFile(this)"></div>
+				</th:block>
+			</div>
+
+			<div class="action-button" onclick="uploadFile()">Upload file</div>
+			<div class="action-button" onclick="parseFile()">Parse file</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+
+</body>
+</html>

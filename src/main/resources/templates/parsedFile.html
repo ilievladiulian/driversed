@@ -1,12 +1,30 @@
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-	<meta charset="UTF-8">
-	<title>Parsed XML file</title>
-	<link rel="stylesheet" href="css/style.css">
-	<script type="text/javascript" th:src="@{js/functions.js}"/>
-</head>
-<body>
-	<h2>Parsed XML file: <span th:text="${fileName}"></span></h2>
-
-</body>
-</html>
+<div id="page-title" th:text="${message}"></div>
+<div id="page-content">
+	<div class="xml-information">
+		<div class="name" th:text="${informatie.nume}"></div>
+		<div class="data-deschidere" th:text="${informatie.dataDeschidere}"></div>
+	</div>
+	<div class="studenti">
+		<div class="row header-row">
+			<div class="info-student">Nume</div>
+			<div class="info-student">Numar telefon</div>
+			<div class="info-student">Sex</div>
+			<div class="info-student adresa">Adresa</div>
+			<div class="info-student">Categorie</div>
+			<div class="info-student">Instructor</div>
+			<div class="info-student">Model masina</div>
+		</div>
+		<th:block th:each="student : ${studenti.student}">
+			<div class="row">
+				<div class="info-student" th:text="${student.nume}"></div>
+				<div class="info-student" th:text="${student.numarTelefon}"></div>
+				<div class="info-student" th:text="${student.sex}"></div>
+				<div class="info-student adresa" th:text="${student.adresa}"></div>
+				<div class="info-student" th:text="${student.categorie}"></div>
+				<div class="info-student" th:text="${student.instructor.nume}"></div>
+				<div class="info-student" th:text="${student.instructor.masina.model}"></div>
+			</div>
+		</th:block>
+	</div>
+	<div class="action-button" onclick="backToHome()">Back to home</div>
+</div>

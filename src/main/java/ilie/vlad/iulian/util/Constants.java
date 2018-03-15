@@ -7,4 +7,6 @@ public class Constants {
 	public static final String DTD_RESOURCE_NAME = "scoalasoferi.dtd";
 	public static final String XSL_RESOURCE_NAME = "scoalasoferi.xsl";
 
+	public static final String UPLOAD_DIR = "src/main/resources/xml/uploaded/";
+
 }
