@@ -6,7 +6,7 @@
 				<h2>Scoala de soferi</h2>
 				<h3>Informatii</h3>
 				<table border="1">
-					<tr bgcolor="#9acd32">
+					<tr bgcolor="#FF7AD5">
 						<th>Nume</th>
 						<th>Data deschiderii</th>
 					</tr>
@@ -19,7 +19,7 @@
 				</table>
 				<h3>Studenti</h3>
 				<table border="1">
-					<tr bgcolor="#9acd32">
+					<tr bgcolor="#FF7AD5">
 						<th rowspan="3">Nume</th>
 						<th rowspan="3">Numar telefon</th>
 						<th rowspan="3">Sex</th>
@@ -29,7 +29,7 @@
 						<th colspan="2">Examen</th>
 						<th colspan="8">Instructor</th>
 					</tr>
-					<tr bgcolor="#9acd32">
+					<tr bgcolor="#FF7AD5">
 						<th rowspan="2">Data examen</th>
 						<th rowspan="2">Nota</th>
 						<th rowspan="2">Nume</th>
@@ -38,7 +38,7 @@
 						<th rowspan="2">Adresa</th>
 						<th colspan="4">Masina</th>
 					</tr>
-					<tr bgcolor="#9acd32">
+					<tr bgcolor="#FF7AD5">
 						<th>Model</th>
 						<th>An fabricatie</th>
 						<th>Culoare</th>

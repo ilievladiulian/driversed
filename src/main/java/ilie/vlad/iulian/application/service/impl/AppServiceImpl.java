@@ -39,7 +39,7 @@ public class AppServiceImpl implements AppService {
 	public HttpEntity<byte[]> getResource(String fileName) {
 		String xml = "";
 		String fullPath = Constants.PATH_TO_RESOURCE;
-		if (fileName.contains("xml")) {
+		if (fileName.contains(".xml")) {
 			fullPath = fullPath + "uploaded/";
 		}
 		StreamSource source = new StreamSource(fullPath + fileName);
@@ -96,7 +96,9 @@ public class AppServiceImpl implements AppService {
 		File[] listOfFiles = folder.listFiles();
 		List<String> fileNames = new ArrayList<>();
 		for (int index = 0; index < listOfFiles.length; index++) {
-			fileNames.add(listOfFiles[index].getName());
+			if (listOfFiles[index].getName().contains(".xml")) {
+				fileNames.add(listOfFiles[index].getName());
+			}
 		}
 		if (fileNames.isEmpty()) {
 			model.addAttribute("message", "There are no files uploaded yet.");
